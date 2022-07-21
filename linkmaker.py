@@ -1,3 +1,4 @@
+import hashlib
 #creates the strings for the subreddit
 reddit = "https://www.reddit.com/r/"
 subreddit = input("Enter the subreddit: ")
@@ -16,6 +17,19 @@ for modify in file1.readlines():
     mod_string = modify[33:]
     mod_string = mod_string[:-2]#this just takes off the quotation mark
     throwaway, mod_string = mod_string.split("\\")
+    #removes duplatic strings
+    mod_string = mod_string.replace("_11","")
+    mod_string = mod_string.replace("_10","")
+    mod_string = mod_string.replace("_9","")
+    mod_string = mod_string.replace("_8","")
+    mod_string = mod_string.replace("_7","")
+    mod_string = mod_string.replace("_6","")
+    mod_string = mod_string.replace("_5","")
+    mod_string = mod_string.replace("_4","")
+    mod_string = mod_string.replace("_3","")
+    mod_string = mod_string.replace("_2","")
+    mod_string = mod_string.replace("_1","")
+
     #splits the post ID from the title
     part1, part2 = mod_string.split("_")
 
